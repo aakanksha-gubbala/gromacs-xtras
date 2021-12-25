@@ -2,7 +2,7 @@ Automate iterative commands for energy minimisation in GROMACS using python's su
 
 The execution looks like this:
 ```console
-$ python3 shell.py
+foo@bar:~$ python3 shell.py
 -----------------------EM Run 1-----------------------
 Steepest Descents converged to Fmax < 200 in 5126 steps
 Potential Energy  =  6.1504507e+03
@@ -39,5 +39,5 @@ Potential Energy  =  6.1892192e+03
 Maximum force     =  1.9481198e+02 on atom 5817
 Norm of force     =  3.0381814e+01
 -------------------------Done!-------------------------
-$ 
+foo@bar:~$ 
 ```
