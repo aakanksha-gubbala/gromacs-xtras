@@ -1,12 +1,13 @@
 import subprocess as sp
 
 # Give initial filenames
-initial_filename = "NBA_AcA_SOL.gro"
-top_filename = "NBA.top"
+initial_filename = "conf.gro"
+top_filename = "topol.top"
+energy_minim_filename = "minim.mdp"
 
 gromppRun1 = sp.run(["gmx",
                      "grompp",
-                     "-f", "minim.mdp",
+                     "-f", energy_minim_filename,
                      "-c", initial_filename,
                      "-p", top_filename,
                      "-o", "em1.tpr"],
