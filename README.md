@@ -23,7 +23,7 @@ Steepest Descents converged to Fmax < 200 in 7 steps
 Potential Energy  =  6.1892192e+03
 Maximum force     =  1.9481198e+02 on atom 5817
 Norm of force     =  3.0381814e+01
------------------------EM Run 4-----------------------
+-----------------------EM Run 5-----------------------
 Steepest Descents converged to Fmax < 200 in 7 steps
 Potential Energy  =  6.1892192e+03
 Maximum force     =  1.9481198e+02 on atom 5817
