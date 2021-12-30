@@ -1,39 +1,39 @@
 import subprocess as sp
 
 # Runs NVT 
-NVT1 = sp.run(["gmx",
+NVT  = sp.run(["gmx",
                "grompp",
                "-f", "nvt.mdp",
                "-c", "em.gro",
                "-r", "em.gro",
                "-p", "topol.top",
-               "-o", "nvt1.tpr"])
+               "-o", "nvt.tpr"])
 
-RUN_NVT1 = sp.run(["gmx",
+RUN_NVT  = sp.run(["gmx",
                    "mdrun",
-                   "-deffnm", "nvt1",
+                   "-deffnm", "nvt",
                    "-v"])
 
 # Runs NPT
-NPT1 = sp.run(["gmx",
+NPT  = sp.run(["gmx",
                "grompp",
                "-f", "npt.mdp",
-               "-c", "nvt1.gro",
-               "-r", "nvt1.gro",
+               "-c", "nvt.gro",
+               "-r", "nvt.gro",
                "-p", "topol.top",
-               "-o", "npt1.tpr"])
+               "-o", "npt.tpr"])
 
-RUN_NPT1 = sp.run(["gmx",
+RUN_NPT  = sp.run(["gmx",
                    "mdrun",
-                   "-deffnm", "npt1",
+                   "-deffnm", "npt",
                    "-v"])
 
 # Runs MD
 MD1 = sp.run(["gmx",
               "grompp",
               "-f", "md.mdp",
-              "-c", "npt1.gro",
-              "-r", "npt1.gro",
+              "-c", "npt.gro",
+              "-r", "npt.gro",
               "-p", "topol.top",
               "-o", "md1.tpr"])
 
