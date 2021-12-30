@@ -1,13 +1,12 @@
 import subprocess as sp
 
-# NVT
-# 10 ns
+# Runs NVT 
 NVT1 = sp.run(["gmx",
                "grompp",
                "-f", "nvt.mdp",
                "-c", "em.gro",
                "-r", "em.gro",
-               "-p", "IPA.top",
+               "-p", "topol.top",
                "-o", "nvt1.tpr"])
 
 RUN_NVT1 = sp.run(["gmx",
@@ -15,14 +14,13 @@ RUN_NVT1 = sp.run(["gmx",
                    "-deffnm", "nvt1",
                    "-v"])
 
-# NPT
-# 10 ns
+# Runs NPT
 NPT1 = sp.run(["gmx",
                "grompp",
                "-f", "npt.mdp",
                "-c", "nvt1.gro",
                "-r", "nvt1.gro",
-               "-p", "IPA.top",
+               "-p", "topol.top",
                "-o", "npt1.tpr"])
 
 RUN_NPT1 = sp.run(["gmx",
@@ -30,14 +28,13 @@ RUN_NPT1 = sp.run(["gmx",
                    "-deffnm", "npt1",
                    "-v"])
 
-# MD
-# 10 ns
+# Runs MD
 MD1 = sp.run(["gmx",
               "grompp",
               "-f", "md.mdp",
               "-c", "npt1.gro",
               "-r", "npt1.gro",
-              "-p", "IPA.top",
+              "-p", "topol.top",
               "-o", "md1.tpr"])
 
 RUN_MD1 = sp.run(["gmx",
@@ -46,7 +43,7 @@ RUN_MD1 = sp.run(["gmx",
                   "-v"])
 
 # MD Continuation
-# 10 ns
+# Appends 10 ns to the initial MD run
 MD2 = sp.run(["gmx",
               "convert-tpr",
               "-s", "md1.tpr",
@@ -60,7 +57,7 @@ RUN_MD2 = sp.run(["gmx",
                   "-noappend",
                   "-v"])
 
-# 10 ns
+# Appends 10 ns more to the previous MD run
 MD3 = sp.run(["gmx",
               "convert-tpr",
               "-s", "md2.tpr",
@@ -74,7 +71,7 @@ RUN_MD3 = sp.run(["gmx",
                   "-noappend",
                   "-v"])
 
-# 20 ns
+# Appends 20 ns more to the previous MD run
 MD4 = sp.run(["gmx",
               "convert-tpr",
               "-s", "md3.tpr",
