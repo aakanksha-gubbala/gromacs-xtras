@@ -57,7 +57,7 @@ RUN_MD2 = sp.run(["gmx",
                   "-noappend",
                   "-v"])
 
-# Appends 10 ns more to the previous MD run
+# Appends 10 ns to the previous MD run
 MD3 = sp.run(["gmx",
               "convert-tpr",
               "-s", "md2.tpr",
@@ -71,7 +71,7 @@ RUN_MD3 = sp.run(["gmx",
                   "-noappend",
                   "-v"])
 
-# Appends 20 ns more to the previous MD run
+# Appends 20 ns to the previous MD run
 MD4 = sp.run(["gmx",
               "convert-tpr",
               "-s", "md3.tpr",
