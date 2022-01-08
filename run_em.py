@@ -36,7 +36,7 @@ for i in range(2, 1000):
 
     gromppRun2 = sp.run(["gmx",
                          "grompp",
-                         "-f", "minim.mdp",
+                         "-f", energy_minim_filename,
                          "-c", filename,
                          "-p", top_filename,
                          "-o", out],
