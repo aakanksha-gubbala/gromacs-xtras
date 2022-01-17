@@ -1,4 +1,4 @@
-I: Automate iterative commands for energy minimisation in GROMACS using python's subprocess module.
+## I: Automate iterative commands for energy minimisation in GROMACS using python's subprocess module.
 
 The execution looks like this:
 ```console
@@ -31,3 +31,7 @@ Norm of force     =  3.0381814e+01
 -------------------------Done!-------------------------
 foo@bar:~$ 
 ```
+## II: Automate running NVT, NPT and MD (piecewise) using ```automate_MD.py```.
+
+## III: Plot .xvg files from GROMACS using ```get_xvg.py```
+
